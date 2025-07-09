@@ -45,5 +45,13 @@ describe StringCalculator
       end
     end
 
+    context "handle negetive numbers" do
+      it "raise an exception" do
+        expect(StringCalculator.add("-1,-2,3")).to raise_exception {|exp|
+          exp.message.should.eq "negative numbers not allowed -1, -2"
+        }
+      end
+    end
+
   end
 end
